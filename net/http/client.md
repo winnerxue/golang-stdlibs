@@ -15,6 +15,8 @@ if err != nil {
     fmt.Println(err.Error())
 }
 
+defer resp.Body.Close()
+
 b,err := ioutils.ReadAll(resp.Body)
 if err != nil {
     fmt.Println(err.Error())
